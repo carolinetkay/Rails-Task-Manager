@@ -5,7 +5,7 @@
     <div>
     <input type="checkbox" <%= task.completed && "checked" %>>
     <%= link_to task.title, task_path(task) %>
-    <p class="delete"><%= link_to 'delete me', destroy_task_path(task), method: :delete %> </p>
+    <p class="delete"><%= link_to 'delete me', task_path(task), method: :delete %> </p>
     </div>
     <% end %>
 </ul>

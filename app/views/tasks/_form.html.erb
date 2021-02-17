@@ -1,0 +1,25 @@
+<ul>
+    <% task.errors %>
+    <% task.errors.full_messages.each do |message| %>
+    <li><%= message %> </li>
+    <% end %>
+</ul>
+
+
+<%= form_for(task) do |t| %>
+<div>
+    <%= t.label :title %>
+    <%= t.text_field :title, placeholder: "Please input task title" %>
+</div>
+<div>
+    <%= t.label :details %>
+    <%= t.text_area :details, placeholder: "Please input task details" %>
+</div>
+    <% unless task.new_record? %>
+        <%= t.check_box :completed %>
+      <%= t.label 'Mark as completed' %>
+    <% end %>
+    <br>
+    <br>
+    <%= t.submit %>
+<% end %>
