@@ -16,7 +16,7 @@
     <%= t.text_area :details, placeholder: "Please input task details" %>
 </div>
     <% unless task.new_record? %>
-        <%= t.check_box :completed %>
+      <%= t.check_box :completed %>
       <%= t.label 'Mark as completed' %>
     <% end %>
     <br>
