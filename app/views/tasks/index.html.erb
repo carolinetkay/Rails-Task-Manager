@@ -1,7 +1,12 @@
 <h1>My Tasks</h1>
+<p>Note: Checked boxes only indicate whether a task has been completed or not. <br>To actually mark a task as complete, click into the task item first.</p>
 <ul>
     <% @tasks.each do |task| %>
-    <li><%= link_to task.title, task_path(task) %></li>
+    <div>
+    <input type="checkbox" <%= task.completed && "checked" %>>
+    <%= link_to task.title, task_path(task) %>
+    <p class="delete"><%= link_to 'delete me', destroy_task_path(task), method: :delete %> </p>
+    </div>
     <% end %>
 </ul>
 
